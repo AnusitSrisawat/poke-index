@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -37,7 +38,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 overflow-auto
                           w-full">
             {pokemon.results?.map((data: any, index: any) => (
-              <div key={index} className="relative flex flex-col justify-center items-center gap-2.5 shadow-xl p-3 rounded-2xl bg-blue-700">
+              <Link key={index} href={`/pokemon/${index +1}`}>
+              <div className="relative flex flex-col justify-center items-center gap-2.5 shadow-xl p-3 rounded-2xl bg-blue-700">
                 <div className="absolute top-2 left-2 rounded-full bg-amber-200 w-6 h-6 flex justify-center items-center 
                                 text-center text-black text-sm font-bold">{index+1}</div>
                 <p className="text-center capitalize">{data.name}</p>
@@ -48,6 +50,7 @@ export default function Home() {
                   height={100}
                 />
               </div>
+              </Link>
             ))}
           </div>
         </div>
