@@ -45,15 +45,18 @@ export default function Home1() {
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 w-full max-w-5xl flex-col gap-5 items-center justify-between py-12 px-6 
                       bg-white dark:bg-black sm:items-start max-h-screen">
-        <div className="flex w-full bg-blue-900 h-auto p-5 rounded-2xl justify-between items-center">
-          <Link href="/">
-            <h1 className="text-amber-200 font-bold text-3xl">BACK</h1>
-          </Link>
-          <h1 className="text-amber-200 font-bold text-3xl">Poke index {index}</h1>
-          <h1></h1>
+        <div className="flex flex-row gap-5 w-full">
+          <div className="flex bg-blue-900 h-auto p-5 rounded-2xl justify-center items-center">
+            <Link href="/">
+              <h1 className="text-amber-200 font-bold text-3xl">BACK</h1>
+            </Link>
+          </div>
+          <div className="flex w-full bg-blue-900 h-auto p-5 rounded-2xl justify-center items-center">
+            <h1 className="text-amber-200 font-bold text-3xl">Poke index {index}</h1>
+          </div>
         </div>
 
-        <div className="flex flex-1 gap-3 bg-blue-800 rounded-2xl shadow-2xl p-10 w-full h-full overflow-auto justify-start items-center flex-col">
+        <div className="flex flex-1 gap-3 bg-blue-800 rounded-xl shadow-blue-950 shadow-lg p-10 w-full h-full overflow-auto justify-start items-center flex-col">
           {loading ? (
             <p className="text-center text-2xl text-amber-200">Loading...</p>
           ) : (
